@@ -1,0 +1,80 @@
+<div class="container">
+<div class="col-md-9 col-sm-6 col-xs-12">
+<div class="panel panel-default offset-md-3 ">
+  <div class="panel-heading"><div class="panel-heading  h5 text-center card-body" >   AJOUTER UN ÉLÈVE
+  </div></div>
+  <div class="panel-body text-center" *ngIf="mode==1">
+     <form #f="ngForm" (ngSubmit)="onSaveEtudiant(f.value)">
+      <div class="form-group">
+        <label class="control-label h5">First Name</label>
+        <input  style="border: solid;border-color: #000;" class="form-control" type="text" name="firstName" ngModel >
+      </div>
+      <div class="form-group">
+        <label class="control-label h5">Last Name</label>
+        <input  style="border: solid;border-color: #000;" class="form-control" type="text" name="lastName" ngModel >
+      </div>
+      <div class="form-group">
+        <label class="control-label h5">Username</label>
+        <input  style="border: solid;border-color: #000;" class="form-control" type="text" name="username" ngModel >
+      </div>
+      <div class="form-group">
+        <label class="control-label h5">Password</label>
+        <input  style="border: solid;border-color: #000;" class="form-control" type="password" name="password" ngModel >
+      </div>
+      <div class="form-group">
+        <label class="control-label h5">Email</label>
+        <input  style="border: solid;border-color: #000;" class="form-control" type="email" name="email" ngModel >
+      </div>
+      <div class="form-group">
+        <label class="control-label h5">Classe</label>
+        <input  style="border: solid;border-color: #000;" class="form-control" type="text" name="classe" ngModel >
+      </div>
+      <div class="form-group">
+        <label class="control-label h5">Niveau</label>
+        <input  style="border: solid;border-color: #000;" class="form-control" type="text" name="niveau" ngModel >
+      </div>
+      <button class="btn btn-success" type="submit">Save</button>
+
+    </form>
+  </div>
+  <div class="panel-body" *ngIf="mode==2">
+    <button class="btn btn-success" (click)="onNewEtudiant()" >Nouveau Élève</button>
+    <p></p>
+    <div class="form-group">
+      <label>ID: </label>
+      <label>{{currentEtudiant?.id}}</label>
+    </div>
+    <div class="form-group">
+      <label>FirstName: </label>
+      <label>{{currentEtudiant?.firstName}}</label>
+    </div>
+    <div class="form-group">
+      <label>LastName: </label>
+      <label>{{currentEtudiant?.lastName}}</label>
+    </div>
+    <div class="form-group">
+      <label>username: </label>
+      <label>{{currentEtudiant?.username}}</label>
+    </div>
+    <div class="form-group">
+      <label>password: </label>
+      <label>{{currentEtudiant?.password}}</label>
+    </div>
+    <div class="form-group">
+      <label>email: </label>
+      <label>{{currentEtudiant?.email}}</label>
+    </div>
+    <div class="form-group">
+      <label>niveau: </label>
+      <label>{{currentEtudiant?.niveau}}</label>
+    </div>
+    <div class="form-group">
+      <label>classe: </label>
+      <label>{{currentEtudiant?.classe}}</label>
+    </div>
+
+
+  </div>
+</div>
+</div>
+</div>

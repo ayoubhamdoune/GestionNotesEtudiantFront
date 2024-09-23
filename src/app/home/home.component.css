@@ -1,0 +1,44 @@
+.card {
+
+    margin: 20px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+border: solide;border-color: #3638D3;
+border-width: 2PX;
+}
+.butt{
+  margin: 20px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  text-align: center;
+}
+.card .icon {
+    font-size: 30px;
+    color: #3638D3;
+}
+.card .value {
+    font-size: 24px;
+    font-weight: bold;
+}
+.card .change {
+    font-size: 14px;
+}
+.card img {
+    width: 40px;
+    height: 40px;
+}
+.back{
+
+
+
+  background-position-x: left;
+  background-position-y: bottom;
+  background-attachment: fixed;
+  background-image: url(../../assets/cover.png);
+
+  background-repeat:no-repeat;
+  background-size:450px;
+}
+
+

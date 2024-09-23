@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="col-md-9 col-sm-6 col-xs-12">
+    <div class="panel panel-default offset-md-3 ">
+    <div class="panel panel-default">
+
+      <div class="panel-heading  h3 text-center" >AJOUTER UNE MATIERE</div>
+      <div class="panel-body  text-center" *ngIf="mode==1">
+        <form #f="ngForm" (ngSubmit)="onSaveMatiere(f.value)">
+          <div class="form-group">
+            <label class="control-label  h5">nom</label>
+            <input style="border: solid;border-color: #000;" class="form-control" type="text" name="nom" ngModel required>
+          </div>
+          <div class="form-group">
+            <label class="control-label  h5">devoir1</label>
+            <input style="border: solid;border-color: #000;" class="form-control" type="number" name="devoir1" ngModel required>
+          </div>
+          <div class="form-group">
+            <label class="control-label  h5">devoir2</label>
+            <input style="border: solid;border-color: #000;" class="form-control" type="number" name="devoir2" ngModel required>
+          </div>
+          <div class="form-group">
+            <label class="control-label  h5">devoir3</label>
+            <input style="border: solid;border-color: #000;" class="form-control" type="number" name="devoir3" ngModel required>
+          </div>
+          <div class="form-group">
+            <label class="control-label  h5">coeff</label>
+            <input style="border: solid;border-color: #000;" class="form-control" type="number" name="coeff" ngModel required>
+          </div>
+          <div class="form-group">
+            <label class="control-label  h5">id_Élève</label>
+            <input style="border: solid;border-color: #000;" class="form-control" type="number" name="etudiant" ngModel required>
+          </div>
+          <button class="btn btn-success" type="submit">Save</button>
+        </form>
+      </div>
+      <div class="panel-body" *ngIf="mode!=1">
+        La matière est ajoutée avec succès.
+      </div>
+    </div>
+  </div>
+  </div>
+</div>

@@ -1,0 +1,47 @@
+.container {
+  display: flex;
+  flex-direction: column; /* Placer les éléments en colonne */
+  justify-content: flex-start; /* Aligner les éléments en haut */
+  align-items: center; /* Centrer horizontalement */
+  height: 70vh;
+  background-color: #ffffff;
+  padding-top: 20px; /* Ajuster l'espace en haut */
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  width: 60%; /* Ajustez cette valeur selon la taille de votre écran */
+  max-width: 500px; /* Limite la largeur maximum */
+  gap: 300px; /* Augmentez cette valeur pour agrandir la distance entre les boutons */
+}
+
+.orientation-button {
+  padding: 15px 30px;
+  font-size: 18px;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.orientation-button:hover {
+  background-color: #0056b3;
+}
+
+
+/* Media queries pour rendre la page responsive */
+@media (max-width: 768px) {
+  .button-container {
+    width: 100%; /* Prendre toute la largeur disponible sur les petits écrans */
+    gap: 20px; /* Réduire l'écart entre les boutons */
+    flex-direction: column; /* Placer les boutons en colonne sur les petits écrans */
+  }
+
+  .orientation-button {
+    width: 100%; /* Les boutons prennent toute la largeur disponible sur les petits écrans */
+    margin-bottom: 10px; /* Ajouter un espace entre les boutons */
+  }
+}

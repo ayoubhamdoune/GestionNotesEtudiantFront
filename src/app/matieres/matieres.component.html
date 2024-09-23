@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="panel panel-primary">
+    <div class="card-body">
+      <div class="panel-heading  h3 text-center card-body" >Liste des notes</div></div>
+
+    <div class="panel-body">
+     <!--  <button class="btn btn-primary" (click)="onGetMatieres()">Matieres</button>-->
+
+    </div>
+    <div>
+
+      <table class="table table-striped" *ngIf="matieres ">
+        <thead class="thead-dark">
+        <tr>
+          <th scope="col">ID</th><th scope="col">Nom</th><th scope="col">Devoir1</th><th scope="col">Devoir2</th><th scope="col">Devoir3</th><th scope="col">Coeff</th><th scope="col">Moyenne</th>
+
+        </tr>
+        </thead>  <tbody>
+      <tr *ngFor="let m of matieres._embedded.matieres">
+        <td>{{m.id}}</td>
+        <td>{{m.nom}}</td>
+        <td>{{m.devoir1}}</td>
+        <td>{{m.devoir2}}</td>
+        <td>{{m.devoir3}}</td>
+        <td>{{m.coeff}}</td>
+        <td>{{m.noteMatiere.toFixed(2)}}</td>
+
+
+
+      </tr>
+      </tbody>
+      </table>
+
+      <ul class="nav nav-pills nav-center ">
+        <li class="nav-item clickable" *ngFor="let m of pages; let i=index">
+          <a class="nav-link " [ngClass]="i==currentPage?'active':''" (click)="onPageMatiere(i)">{{i}}</a>
+        </li>
+      </ul>
+    </div>
+    <button class="btn btn-primary  text-center" (click)="calculerBulletin()">Moyenne Générale :</button>
+     <h3 class="h3 text-center rounded-circle" style="margin-bottom: 50px ;">{{bulletin}}</h3>
+  </div>
+</div>

@@ -1,0 +1,69 @@
+<div class="container">
+  <div class="panel panel-default">
+    <div class="card-body">
+      <div class="panel-heading  h3 text-center card-body" >Tableau des Matières et Élèves</div></div>
+    <div class="panel-body">
+
+      <form #f="ngForm" (ngSubmit)="onChercher(f.value)">
+        <div class="form-group text-end">
+          <label>Keyword</label>
+          <input type="text" name="keyword" ngModel>
+          <button type="submit" class="btn btn-primary"> Chercher </button>
+        </div>
+        </form>
+
+      <table class="table table-bordered">
+        <thead>
+        <tr>
+          <th>Prénom</th>
+          <th>Nom</th>
+          <th>Niveau</th>
+          <th>Classe</th>
+          <th>Matières</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let etudiantMatieres of allmats">
+          <td>{{ etudiantMatieres.etudiant.firstName }}</td>
+          <td>{{ etudiantMatieres.etudiant.lastName }}</td>
+          <td>{{ etudiantMatieres.etudiant.niveau }}</td>
+          <td>{{ etudiantMatieres.etudiant.classe }}</td>
+          <td>
+            <table class="table table-bordered">
+              <thead>
+              <tr>
+                <th>ID</th>
+                <th>Nom</th>
+                <th>Devoir 1</th>
+                <th>Devoir 2</th>
+                <th>Devoir 3</th>
+                <th>Coeff</th>
+                <th>Note Matière</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr *ngFor="let matiere of etudiantMatieres.matieres">
+                <td>{{ matiere.id }}</td>
+                <td>{{ matiere.nom }}</td>
+                <td>{{ matiere.devoir1 }}</td>
+                <td>{{ matiere.devoir2 }}</td>
+                <td>{{ matiere.devoir3 }}</td>
+                <td>{{ matiere.coeff }}</td>
+                <td>{{ matiere.noteMatiere.toFixed(2) }}</td>
+                <td><a class="btn btn-danger" (click)="onDeleteMatiere(matiere)">Delete</a></td>
+                <td><a class="btn btn-success" (click)="onEditMatiere(matiere)">Edit</a></td>
+              </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <!--ul class="nav nav-pills nav-center ">
+        <li class="nav-item clickable"   *ngFor="let p of pages; let i=index">
+          <a   class="nav-link " [ngClass]="i==currentPage?'active':''" (click)="onPageEtudiant(i)">{{i}}</a>
+        </li>
+      </ul-->
+    </div>
+  </div>
+</div>

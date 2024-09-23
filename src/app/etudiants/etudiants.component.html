@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="panel panel-primary">
+  <div class="card-body">
+    <div class="panel-heading  h3 text-center card-body" >Liste des Élèves</div></div>
+    <div class="panel-body">
+      <form #f="ngForm" (ngSubmit)="onChercher(f.value)">
+      <div class="form-group text-end">
+        <label>Keyword</label>
+        <input type="text" name="keyword" ngModel>
+        <button type="submit" class="btn btn-primary"> Chercher </button>
+      </div>
+      </form>
+      <!--   <button class="btn btn-primary" (click)="onGetEtudiants()">Etudiants</button> -->
+
+    </div>
+    <div>
+
+      <table class="table" *ngIf="etudiants">
+        <thead class="thead-dark">
+        <tr>
+          <th scope="col">ID</th><th scope="col">Nom</th><th scope="col">Prénom</th><th scope="col">Email</th><th scope="col">Niseau</th><th scope="col">Class</th><th scope="col">Delete</th><th scope="col">Edit</th>
+
+        </tr>
+        </thead>  <tbody>
+        <tr *ngFor="let e of etudiants._embedded.etudiants">
+          <td>{{e.id}}</td>
+          <td>{{e.firstName}}</td>
+          <td>{{e.lastName}}</td>
+          <td>{{e.email}}</td>
+          <td>{{e.niveau}}</td>
+          <td>{{e.classe}}</td>
+          <td><a class="btn btn-danger" (click)="onDeleteEtudiant(e)">Delete</a></td>
+          <td><a class="btn btn-success" (click)="onEditEtudiant(e)">Edit</a></td>
+
+
+        </tr>
+      </tbody>
+      </table>
+      <ul class="nav nav-pills nav-center ">
+        <li class="nav-item clickable"   *ngFor="let p of pages; let i=index">
+          <a   class="nav-link " [ngClass]="i==currentPage?'active':''" (click)="onPageEtudiant(i)">{{i}}</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

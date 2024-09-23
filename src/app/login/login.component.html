@@ -1,0 +1,42 @@
+<section class="vh-100 d-flex flex-column">
+  <div class="container-fluid flex-grow-1 d-flex justify-content-center align-items-center">
+    <div class="row d-flex justify-content-center align-items-center w-100">
+      <div class="col-md-9 col-lg-6 col-xl-5">
+        <img src="..\assets\login_img.png" class="img-fluid" alt="Sample image">
+      </div>
+      <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+        <form [formGroup]="userFormGroup">
+          <div class="text-danger" *ngIf="errorMessage">{{errorMessage}}</div>
+          <div class="divider d-flex align-items-center my-4">
+            <p class="text-center fw-bold mx-3 mb-0" style="font-size: x-large">Connexion</p>
+          </div>
+          <!-- Email input -->
+          <div data-mdb-input-init class="form-outline mb-4">
+            <input formControlName="username" type="email" id="form3Example3" class="form-control form-control-lg"
+                   style="border: solid;border-color: #3638D3;" placeholder="Enter a valid UserName"/>
+            <label class="form-label" for="form3Example3">Nom d'utilisateur</label>
+          </div>
+          <!-- Password input -->
+          <div data-mdb-input-init class="form-outline mb-3">
+            <input formControlName="password" type="password" id="form3Example4" class="form-control form-control-lg"
+                   style="border: solid;border-color: #3638D3;" placeholder="Enter password"/>
+            <label class="form-label" for="form3Example4">Mot de passe</label>
+          </div>
+          <label>Sélectionnez votre rôle</label>
+          <select formControlName="role" class="form-select" style="border: solid;border-color: #3638D3;">
+            <option selected>select your role</option>
+            <option value="etudiant">Élève</option>
+            <option value="admin">admin</option>
+          </select>
+          <div class="text-center text-lg-start mt-4 pt-2">
+            <button type="submit" (click)="handleLogin()" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-lg"
+                    style="padding-left: 2.5rem; padding-right: 2.5rem; background-color: #3638D3;">Connexion</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="footer bg-primary text-white text-center py-3">
+    <div>Copyright © 2024. GestionEtOrientation All rights reserved.</div>
+  </div>
+</section>

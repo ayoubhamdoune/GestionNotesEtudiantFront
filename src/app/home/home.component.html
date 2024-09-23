@@ -1,0 +1,172 @@
+
+
+
+    <div class="" style="height: 100%;" >
+ <div class="card-body">
+    <div class="panel-heading  h2 text-center card-body" >   BIENVENUE DANS VOTRE E-SCOLARITÉ
+
+    </div>
+ </div>
+
+  <div class="panel-body" style="height: 100%;">
+    <div class="container" style="height: 100%;">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card ">
+                    <div class="d-flex justify-content-between" >
+                        <div>
+                            <div class="text-muted">LES MATIÈRES</div>
+                            <div class="value">+254</div>
+                            <div class="text-success change"> matiere
+                            </div>
+                        </div>
+                        <div class="icon">
+                            <img src="../../assets/matieres.png" alt="Customers Logo">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <div *ngIf="isUser" class="text-muted">VOS COLLÈGUES</div>
+                            <div *ngIf="isUser" class="value">20</div>
+                          <div *ngIf="isAdmin" class="text-muted">LES ÉLÈVES</div>
+                          <div *ngIf="isAdmin" class="value">120</div>
+                            <div class="text-danger change">Élève</div>
+                        </div>
+                        <div class="icon">
+                            <img src="../../assets/etudiants.png" alt="Customers Logo">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <div *ngIf="isAdmin" class="text-muted">LES PROFESSEURS</div>
+                            <div *ngIf="isAdmin" class="value">32</div>
+                          <div *ngIf="isUser" class="text-muted">VOS PROFESSEURS</div>
+                          <div *ngIf="isUser" class="value">12</div>
+                            <div class="text-danger change">professeur</div>
+                        </div>
+                        <div class="icon">
+                            <img src="../../assets/profs.png" alt="Customers Logo">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <div class="text-muted">LES FILIÈRES</div>
+                            <div class="value">30</div>
+                            <div class="text-success change">filière</div>
+                        </div>
+                        <div class="icon">
+                            <img src="../../assets/filieres.png" alt="Customers Logo">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+    <div class="back panel-body text-center" style="height: 100%; ">
+        <div class="container ">
+            <div *ngIf="isUser" class="row  text-center row-expand-lg  row-expand-sm row-expand-md row-expand-lg row-expand-xl" style="height:300px;">
+              <div class="col-md-3">
+              </div>
+              <div class="col-md-3">
+
+                <button *ngIf="isUser" routerLink="/admin/matieres"  class="butt col-md-4 card  justify-content-between " style="height: 100px;text-align: center;" >
+                    <h3 style="text-align: center ;margin: auto; ">NOTES</h3>
+
+                </button>
+
+              </div>
+              <div class="col-md-3">
+                <button *ngIf="isUser" routerLink="/admin/profile"  class="butt col-md-4 card  justify-content-between " style="height: 100px;text-align: center;" >
+                    <h4 style="text-align: center ;margin: auto; text-size-adjust: auto">INFORMATIONS PERSONNELLES</h4>
+
+                </button>
+              </div>
+              <div class="col-md-3">
+              </div>
+              <div class="col-md-3">
+              </div>
+              <div class="col-md-3">
+                <button  *ngIf="isUser" routerLink="/admin/matieres"  class="butt col-md-4 card  justify-content-between " style="height: 100px;text-align: center;" >
+                    <h3 style="text-align: center ;margin: auto; ">MOYENNE GENERALE</h3>
+
+                </button>
+              </div>
+              <div class="col-md-3">
+                <button *ngIf="isUser" routerLink="/admin/orientation"  class="butt col-md-4 card  justify-content-between " style="height: 100px;text-align: center;" >
+                    <h3 style="text-align: center ;margin: auto; ">ORIENTATION</h3>
+
+                </button>
+              </div>
+
+              <div class="col-md-3">
+
+
+
+
+              </div>
+            </div>
+              <div *ngIf="isAdmin" class="row  text-center row-expand-lg  row-expand-sm row-expand-md row-expand-lg row-expand-xl" style="height:300px;">
+
+                <div class="col-md-3">
+                </div>
+                <div class="col-md-3">
+                <button *ngIf="isAdmin" routerLink="/admin/etudiants"  class="butt col-md-4 card  justify-content-between " style="height: 100px;text-align: center;" >
+                    <h3 style="text-align: center ;margin: auto;">LISTE DES ÉLÈVES</h3>
+
+                </button>
+              </div>
+              <div class="col-md-3">
+                <button *ngIf="isAdmin" routerLink="/admin/notes-matieres-etud" class="butt col-md-4 card  justify-content-between"  style="height: 100px;text-align: center;" >
+                    <h3 style="text-align: center ;margin: auto;" >NOTES</h3>
+
+               </button>
+              </div>
+              <div class="col-md-3">
+              </div>
+              <div class="col-md-3">
+              </div>
+              <div class="col-md-3">
+                <button *ngIf="isAdmin" routerLink="/admin/new-matiere" class="butt col-md-4 card  justify-content-between" style="height: 100px;text-align: center;" >
+                    <h3 style="margin-left: 5px;" >AJOUTER UNE MATIÈRE</h3>
+
+
+            </button>
+              </div>
+              <div class="col-md-3">
+            <button *ngIf="isAdmin" routerLink="/admin/new-etudiant" class="butt col-md-4 card  justify-content-between" style="height: 100px;text-align: center;" >
+                <h3  style="margin-left: 5px;">AJOUTER UN ÉLÈVE</h3>
+
+
+            </button>
+              </div>
+              <div class="col-md-3">
+
+
+
+
+              </div>
+
+            </div>
+
+
+          </div>
+        </div>
+
+    </div>
+
